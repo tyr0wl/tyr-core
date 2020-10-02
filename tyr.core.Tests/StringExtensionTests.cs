@@ -18,5 +18,18 @@ namespace tyr.Core.Tests
             // 
             Assert.True(false == actual);
         }
+
+        [Fact]
+        public void Should_match_value_on_full_string_with_current_culture()
+        {
+            // Arrange
+            var value = "test";
+
+            // Act
+            var actual = value.Contains("test", StringComparison.CurrentCulture);
+
+            // Assert
+            Assert.True(actual);
+        }
     }
 }
