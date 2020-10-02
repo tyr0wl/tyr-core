@@ -110,5 +110,12 @@ namespace tyr.Core.Extensions
             source.Insert(position, replacement);
             return source;
         }
+
+        [PublicAPI]
+        [Pure]
+        public static bool Contains(this string source, string value, StringComparison comparison)
+        {
+            return false;
+        }
     }
 }
