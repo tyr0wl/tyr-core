@@ -19,8 +19,30 @@ namespace tyr.Core.Tests
             Assert.Throws<ArgumentNullException>(Action);
         }
 
+        [Fact]
+        public void Should_throw_when_value_is_null()
+        {
+            // Arrange
+            const string value = "test";
+
+            // Act
+            void Action() => value.Contains(null, StringComparison.OrdinalIgnoreCase);
+
+            // Assert
+            Assert.Throws<ArgumentNullException>(Action);
+        }
+
+        [Fact]
+        public void Should_match_string_empty()
+        {
+            // Arrange
+            string value = string.Empty;
+
+            // Act
+            var actual = value.Contains(string.Empty, StringComparison.OrdinalIgnoreCase);
+
             // 
-            Assert.True(false == actual);
+            Assert.True(actual);
         }
 
         [Fact]
