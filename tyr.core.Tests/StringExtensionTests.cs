@@ -31,5 +31,18 @@ namespace tyr.Core.Tests
             // Assert
             Assert.True(actual);
         }
+
+        [Fact]
+        public void Should_not_match_value_on_full_string_with_current_culture_and_different_case()
+        {
+            // Arrange
+            var value = "tEst";
+
+            // Act
+            var actual = value.Contains("test", StringComparison.CurrentCulture);
+
+            // Assert
+            Assert.True(false == actual);
+        }
     }
 }
