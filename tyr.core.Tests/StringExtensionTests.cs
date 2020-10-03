@@ -7,13 +7,17 @@ namespace tyr.Core.Tests
     public class StringExtensionTests
     {
         [Fact]
-        public void Should_not_throw_on_null()
+        public void Should_throw_when_source_is_null()
         {
             // Arrange
             string nullString = null;
 
             // Act
-            var actual = nullString.Contains("test", StringComparison.OrdinalIgnoreCase);
+            void Action() => nullString.Contains("test", StringComparison.OrdinalIgnoreCase);
+
+            // Assert
+            Assert.Throws<ArgumentNullException>(Action);
+        }
 
             // 
             Assert.True(false == actual);
