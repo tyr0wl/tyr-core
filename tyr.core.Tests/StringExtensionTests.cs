@@ -23,7 +23,7 @@ namespace tyr.Core.Tests
         public void Should_match_value_on_full_string_with_current_culture()
         {
             // Arrange
-            var value = "test";
+            const string value = "test";
 
             // Act
             var actual = value.Contains("test", StringComparison.CurrentCulture);
@@ -36,7 +36,7 @@ namespace tyr.Core.Tests
         public void Should_not_match_value_on_full_string_with_current_culture_and_different_case()
         {
             // Arrange
-            var value = "tEst";
+            const string value = "tEst";
 
             // Act
             var actual = value.Contains("test", StringComparison.CurrentCulture);
