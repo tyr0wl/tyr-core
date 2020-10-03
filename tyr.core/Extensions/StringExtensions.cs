@@ -113,7 +113,7 @@ namespace tyr.Core.Extensions
 
         [PublicAPI]
         [Pure]
-        public static bool Contains(this string source, string value, StringComparison comparison)
+        public static bool Contains([NotNull] this string source, [NotNull] string value, StringComparison comparison)
         {
             Requires.IsNotNull(source, nameof(source));
 
