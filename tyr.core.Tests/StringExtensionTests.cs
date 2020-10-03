@@ -44,5 +44,18 @@ namespace tyr.Core.Tests
             // Assert
             Assert.True(false == actual);
         }
+
+        [Fact]
+        public void Should_match_value_on_full_string_with_ignore_case_and_different_case()
+        {
+            // Arrange
+            const string value = "tEst";
+
+            // Act
+            var actual = value.Contains("test", StringComparison.InvariantCultureIgnoreCase);
+
+            // Assert
+            Assert.True(actual);
+        }
     }
 }
